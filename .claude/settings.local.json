@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --app --eslint --no-tailwind --src-dir=false --import-alias=\"@/*\" --yes)",
+      "Bash(npm --version)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(brew --version)",
+      "Read(//Users/lucaswein/Desktop/**)",
+      "Bash(npx create-next-app@latest rebrokerforce --typescript --app --eslint --no-tailwind --src-dir=false --import-alias=\"@/*\" --yes)"
+    ]
+  }
+}
