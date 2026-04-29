@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Chip from "@mui/material/Chip";
 import CircularProgress from "@mui/material/CircularProgress";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
@@ -23,7 +22,8 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import { createClient } from "@/lib/supabase/client";
 import BrokerAvatar from "@/components/BrokerAvatar";
-import type { Engagement, EngagementFile, EngagementStatus, Profile } from "@/lib/types";
+import LicensesSection from "@/components/LicensesSection";
+import type { Engagement, EngagementFile, EngagementStatus, License, Profile } from "@/lib/types";
 
 interface Props {
   buyers: Profile[];
@@ -72,6 +72,7 @@ export default function EngagementForm({ buyers, brokers, engagement }: Props) {
   const [clientNotes, setClientNotes]     = useState(engagement?.client_notes ?? "");
   const [complianceNotes, setComplianceNotes] = useState(engagement?.compliance_notes ?? "");
   const [emailNotes, setEmailNotes]       = useState(engagement?.email_notes ?? "");
+  const [licenses, setLicenses]           = useState<License[]>(engagement?.licenses ?? []);
 
   // ── File state ────────────────────────────────────────────────────────────
   const [existingFiles, setExistingFiles] = useState<EngagementFile[]>(engagement?.files ?? []);
@@ -150,6 +151,7 @@ export default function EngagementForm({ buyers, brokers, engagement }: Props) {
       client_notes:      clientNotes.trim() || null,
       compliance_notes:  complianceNotes.trim() || null,
       email_notes:       emailNotes.trim() || null,
+      licenses:          licenses.length > 0 ? licenses : null,
       updated_at:        new Date().toISOString(),
     };
 
@@ -516,6 +518,10 @@ export default function EngagementForm({ buyers, brokers, engagement }: Props) {
           </Stack>
         </Grid>
       </Grid>
+
+      {/* ── Licenses ── */}
+      <Divider sx={{ mt: 5, mb: 4 }} />
+      <LicensesSection licenses={licenses} onChange={setLicenses} />
 
       {/* ── Action bar ── */}
       <Divider sx={{ mt: 5, mb: 3 }} />

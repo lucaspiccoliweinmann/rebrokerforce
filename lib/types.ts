@@ -1,6 +1,11 @@
 export type Role = "admin" | "buyer" | "broker";
 export type EngagementStatus = "pending" | "active" | "closed";
 
+export interface License {
+  state: string;
+  documents: string[];
+}
+
 export interface Profile {
   id: string;
   full_name: string | null;
@@ -19,6 +24,7 @@ export interface Engagement {
   client_notes: string | null;
   compliance_notes: string | null;
   email_notes: string | null;
+  licenses: License[] | null;
   created_at: string;
   updated_at: string;
   buyer?: Profile;
