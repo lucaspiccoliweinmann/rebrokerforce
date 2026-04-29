@@ -25,7 +25,7 @@ export default async function EngagementsPage() {
 
   let query = supabase
     .from("engagements")
-    .select("*, buyer:profiles!engagements_buyer_id_fkey(*), broker:profiles!engagements_broker_id_fkey(*)")
+    .select("*, buyer:profiles!engagements_buyer_id_fkey(*), broker:profiles!engagements_broker_id_fkey(*), files:engagement_files(id)")
     .order("created_at", { ascending: false });
 
   if (p.role === "buyer") query = query.eq("buyer_id", user.id);
