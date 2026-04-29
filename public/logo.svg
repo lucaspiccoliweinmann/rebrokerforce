@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" width="320" height="56">
+  <rect width="320" height="56" fill="#fbf8ff"></rect>
+  
+  <rect x="0" y="8" width="40" height="40" rx="4" fill="#0052ff"></rect>
+  <text x="8" y="34" font-family="Georgia, serif" font-size="20" font-weight="600" fill="#ffffff">RE</text>
+  
+  <text x="50" y="28" font-family="Georgia, serif" font-size="18" font-weight="500" fill="#191b25">REBroker</text>
+  <text x="50" y="47" font-family="Georgia, serif" font-size="18" font-weight="500" fill="#0052ff">Force</text>
+</svg>

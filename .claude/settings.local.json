@@ -7,7 +7,17 @@
       "Read(//opt/homebrew/bin/**)",
       "Bash(brew --version)",
       "Read(//Users/lucaswein/Desktop/**)",
-      "Bash(npx create-next-app@latest rebrokerforce --typescript --app --eslint --no-tailwind --src-dir=false --import-alias=\"@/*\" --yes)"
+      "Bash(npx create-next-app@latest rebrokerforce --typescript --app --eslint --no-tailwind --src-dir=false --import-alias=\"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "Bash(pbcopy)",
+      "mcp__Claude_in_Chrome__tabs_create_mcp",
+      "mcp__Claude_in_Chrome__read_console_messages",
+      "WebFetch(domain:api.anthropic.com)"
     ]
   }
 }
