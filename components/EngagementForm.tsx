@@ -282,13 +282,14 @@ export default function EngagementForm({ buyers, brokers, engagement }: Props) {
                   placeholder="Search clients…"
                   size="small"
                   slotProps={{
+                    ...params.slotProps,
                     input: {
                       ...params.slotProps.input,
                       startAdornment: buyer ? (
                         <Box sx={{ mr: 1, display: "flex", alignItems: "center" }}>
                           <BrokerAvatar fullName={buyer.full_name} avatarUrl={buyer.avatar_url} size={24} />
                         </Box>
-                      ) : (params.slotProps.input as { startAdornment?: React.ReactNode }).startAdornment,
+                      ) : params.slotProps.input.startAdornment,
                     },
                   }}
                 />
@@ -318,13 +319,14 @@ export default function EngagementForm({ buyers, brokers, engagement }: Props) {
                   placeholder="Search brokers…"
                   size="small"
                   slotProps={{
+                    ...params.slotProps,
                     input: {
                       ...params.slotProps.input,
                       startAdornment: broker ? (
                         <Box sx={{ mr: 1, display: "flex", alignItems: "center" }}>
                           <BrokerAvatar fullName={broker.full_name} avatarUrl={broker.avatar_url} size={24} />
                         </Box>
-                      ) : (params.slotProps.input as { startAdornment?: React.ReactNode }).startAdornment,
+                      ) : params.slotProps.input.startAdornment,
                     },
                   }}
                 />
